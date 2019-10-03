@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>dataList</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-col>
+    <ion-button [routerLink]="[('/data-add')]">เพิ่ม</ion-button>
+  </ion-col>
+  <ion-item>
+    <ion-col>
+      <ion-label>รหัสนักเรียน</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>ชื่อ</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>วิชา</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>คะแนน</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>วันที่</ion-label>
+    </ion-col>
+
+    <ion-col>
+      ดูข้อมูล
+    </ion-col>
+
+    <ion-col>
+      แก้ไข
+    </ion-col>
+
+    <ion-col>
+      ลบ
+    </ion-col>
+  </ion-item>
+
+  <ion-item *ngFor="let s of dataStudentAll">
+    <ion-col>
+      <ion-label>{{s.idStudent}}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>{{s.nameStudent}}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>{{s.subjectStudent}}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>{{s.scoreStudent}}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-label>{{s.dateStudent}}</ion-label>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="secondary" (click)="detailDataStudent(s.idStudent)">ดูข้อมูล</ion-button>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="warning" (click)="editDataStudent(s.idStudent)">แก้ไข</ion-button>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="danger" (click)="deleteStudent(s.idStudent)">ลบ</ion-button>
+    </ion-col>
+
+  </ion-item>
+</ion-content>

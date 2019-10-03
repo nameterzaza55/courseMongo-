@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>dataStudent</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h2> ข้อมูลนักเรียน</h2>
+<div *ngIf="student != null">
+    <ion-item>
+      <ion-label>รหัส : {{ student.idStudent }}</ion-label>   
+    </ion-item>
+
+    <ion-item >
+      <ion-label>ชื่อ : {{ student.nameStudent }}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>วิชา : {{ student.subjectStudent }}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>คะแนน : {{ student.scoreStudent }}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>วันที่ : {{ student.dateStudent }}</ion-label>
+     
+    </ion-item>
+</div>
+  <ion-button [routerLink]="[('/data-list')]">กลับ</ion-button>
+</ion-content>

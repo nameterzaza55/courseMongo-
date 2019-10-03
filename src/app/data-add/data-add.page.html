@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>dataAdd</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>เพิ่มข้อมูล</h1>
+  <form [formGroup]="dataStudent" (ngSubmit)="log()">
+
+    <ion-item [class.invalid]="submit && f.idStudent.errors">
+      <ion-label>รหัส</ion-label>
+      <ion-input formControlName="idStudent"></ion-input>
+    </ion-item>
+
+    <ion-item [class.invalid]="submit && f.nameStudent.errors">
+      <ion-label>ชื่อ</ion-label>
+      <ion-input formControlName="nameStudent"></ion-input>
+    </ion-item>
+
+    <ion-item [class.invalid]="submit && f.subjectStudent.errors">
+      <ion-label>วิชา</ion-label>
+      <ion-input formControlName="subjectStudent"></ion-input>
+    </ion-item>
+
+    <ion-item [class.invalid]="submit && f.scoreStudent.errors">
+      <ion-label>คะแนน</ion-label>
+      <ion-input formControlName="scoreStudent"></ion-input>
+    </ion-item>
+
+    <ion-item [class.invalid]="submit && f.dateStudent.errors">
+      <ion-label>วันที่</ion-label>
+      <ion-input formControlName="dateStudent" readonly></ion-input>
+    </ion-item>
+    <ion-button type="submit">เพิ่ม</ion-button>
+  </form>
+</ion-content>
